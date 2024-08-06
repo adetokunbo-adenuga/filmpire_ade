@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import { useTheme } from "@mui/styles";
 import useStyles from "./styles";
 import { useGetGenresQuery } from "../../services/TMDB";
-import genreIcons from "../../assets/assets/genres";
+import genreIcons from "../../assets/genres";
 
 const categories = [
   { label: "Popular", value: "popular" },
