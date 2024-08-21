@@ -30,6 +30,10 @@ const blueLogo =
   "https://fontmeme.com/permalink/210902/8531c658a743debe1e1aa1a2fc82006e.png";
 
 const SideBar = ({ setMobileOpen }) => {
+  const { genreIdOrCategoryName } = useSelector(
+    (state) => state.currentGenreOrCategory
+  );
+
   useEffect(() => {}, []);
   const theme = useTheme();
   const classes = useStyles();
@@ -78,7 +82,9 @@ const SideBar = ({ setMobileOpen }) => {
         ) : (
           data.genres.map(({ name, id }) => (
             <Link key={name} className={classes.link} to="/">
-              <ListItemButton onClick={() => {}}>
+              <ListItemButton
+                onClick={() => dispatch(selectGenreOrCategory(id))}
+              >
                 <ListItemIcon>
                   <img
                     src={genreIcons[name.toLowerCase()]}
